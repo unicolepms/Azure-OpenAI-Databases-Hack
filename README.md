@@ -7,24 +7,23 @@ Examples of questions are:
 
 The application supports Python's built-in SQLITE as well as your own Microsoft SQL Server.
 # Quick start with hosted demo application 
-1. Go to our hosted demo at https://app-web-ulajovkr7vyd4.azurewebsites.net/ if you do not want to install yourself.
 
-2. Enter Open AI and database settings if these were not done during installation (see installation below if you want to install yourself).
+1. Enter Open AI and database settings if these were not done during installation (see installation below if you want to install yourself).
     Click on settings. Provide Open AI keys, deployment name and URL for ChatGPT. Optionally, you can provide deployment name for GPT-4 for advanced questions.
     For data, you can use the built-in SQLITE demo dataset or you can choose to specify your own SQL Server. In case you use SQLITE, you don't need to enter details for SQL Server.
     Click on submit to save settings.
 
-3. There are two applications
+2. There are two applications
     - SQL Query Writing Assistant: a simple application that translate business question into SQL query language then execute and display result.
     - Data Analysis Assistant: a more sophisticated application to perform advanced data analytics such as statisical analysis and forecasting. Here we demonstrate the use of [Chain of Thought](https://arxiv.org/abs/2201.11903) and [React](https://arxiv.org/abs/2210.03629) techniques to perform multi-step processing where the next step in the chain also depends on the observation/result from the previous step.
     - Insert Function Assistant: a simple application to persist new data to the database by using natural language (staging table is required which will be explained in the labs)
 
-4. Use SQL Query Writing Assistant        
+3. Use SQL Query Writing Assistant        
     - Use a question from the FAQ or enter your own question.
     - You can select ```show code``` and/or ```show prompt``` to show SQL query and the prompt behind the scene.
     - Click on submit to execute and see result.
       
-5. Use Data Analyst Assistant      
+4. Use Data Analyst Assistant      
     - Use a question from the FAQ or enter your own question.
     - You can select ```show code``` and/or ```show prompt``` to show SQL & Python code and  the prompt behind the scene.
     - Click on submit to execute and see result.
