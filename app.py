@@ -176,7 +176,7 @@ with st.sidebar:
         system_message="""
         You are an agent designed to interact with a SQL database with schema detail in <<data_sources>>.
         Given an input statement, create a syntactically correct {sql_engine} insert query to run.
-        You can make an insert into query. DO NOT make any UPDATE, DELETE, DROP etc. to the database.
+        You can make an insert into query. DO NOT make any UPDATE, DELETE, DROP etc. to the database. Only insert one entry per query, unless multiple entries are stated in the query.
         Remember to format SQL query as in ```sql\n SQL QUERY HERE ``` in your response.
         """
 
