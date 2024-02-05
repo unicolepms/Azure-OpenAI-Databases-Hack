@@ -2,9 +2,13 @@ numpy==1.22.4
 pandas==1.4.3
 plotly==5.9.0
 pyodbc==4.0.35
-streamlit==1.20.0
-openai==0.27.2
+streamlit
+openai
 python-dotenv==1.0.0
 SQLAlchemy==1.4.47
 scikit-learn
 pmdarima
+azure-search-documents==11.4.0b11
+azure-ai-vision==0.13.0b1
+azure-search
+azure-core
