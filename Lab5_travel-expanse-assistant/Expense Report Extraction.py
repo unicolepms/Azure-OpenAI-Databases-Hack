@@ -16,20 +16,20 @@ image_paths = {
     "Receipt # 4": "images/bills/receipt4.jpg"
 }
 
-# Extracting environment variables
+# Extracting environment variables. Adjust values according to the lab documentation.
 AOAI_API_BASE = "..."
 AOAI_API_KEY = "..."
 AOAI_API_VERSION = "2023-12-01-preview"
 AOAI_DEPLOYMENT = "vision-preview"
 
-# Initiating Azure OpenAI client
+# Initiating Azure OpenAI client.
 client = AzureOpenAI(
     azure_endpoint=AOAI_API_BASE,
     api_key=AOAI_API_KEY,
     api_version=AOAI_API_VERSION
 )
 
-# Database connection details
+# Database connection details. Adjust values according to the lab documentation.
 DB_SERVER = "..."
 DB_NAME = "..."
 DB_USERNAME = "..."
