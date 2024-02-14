@@ -12,3 +12,4 @@ azure-search-documents==11.4.0b11
 azure-ai-vision==0.13.0b1
 azure-search
 azure-core
+matplotlib

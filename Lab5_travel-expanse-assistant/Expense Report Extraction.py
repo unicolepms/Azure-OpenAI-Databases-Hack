@@ -1,4 +1,5 @@
-from openai import AzureOpenAI
+#from openai import AzureOpenAI
+import openai
 import streamlit as st
 import base64
 import json
@@ -17,23 +18,24 @@ image_paths = {
 }
 
 # Extracting environment variables. Adjust values according to the lab documentation.
-AOAI_API_BASE = "..."
-AOAI_API_KEY = "..."
+AOAI_API_BASE = "YOUR_AZURE_OPENAI_ENDPOINT"
+AOAI_API_KEY = "YOUR_AZURE_OPENAI_KEY"
 AOAI_API_VERSION = "2023-12-01-preview"
-AOAI_DEPLOYMENT = "vision-preview"
+AOAI_DEPLOYMENT = "gpt-4-vision"
 
-# Initiating Azure OpenAI client.
-client = AzureOpenAI(
-    azure_endpoint=AOAI_API_BASE,
-    api_key=AOAI_API_KEY,
-    api_version=AOAI_API_VERSION
-)
+# # Initiating Azure OpenAI client.
+# client = AzureOpenAI(
+#     azure_endpoint=AOAI_API_BASE,
+#     api_key=AOAI_API_KEY,
+#     api_version=AOAI_API_VERSION
+# )
 
-# Database connection details. Adjust values according to the lab documentation.
-DB_SERVER = "..."
-DB_NAME = "..."
-DB_USERNAME = "..."
-DB_PASSWORD = "..."
+# Database connection details. Adjust DB_Name according to your Team DB.
+DB_SERVER = "sqlhackmi-j754o5hum2r36.7a59bf01d694.database.windows.net"
+# Adjust DB_Name according to your team number, e.g. TEAM01_LocalMasterDataDB.
+DB_NAME = "YOUR_DB_NAME"
+DB_USERNAME = "Demouser"
+DB_PASSWORD = "Demo@pass1234567"
 
 # Establishing a connection to the Azure SQL Database using SQLAlchemy
 connecting_string = f"Driver={{ODBC Driver 17 for SQL Server}};Server=tcp:{DB_SERVER},1433;Database={DB_NAME};Uid={DB_USERNAME};Pwd={DB_PASSWORD}"
@@ -66,7 +68,7 @@ def gpt4v_completion(image_path):
         "api-key": AOAI_API_KEY
     }
 
-    # Calling Azure OpenAI endpoint via Python SDK
+    # Calling Azure OpenAI endpoint via Python SDK. Make sure to adjust the computer vision endpoint and key values according to lab documentation.
     data = {
         "model": "gpt-4-vision-preview",
         "enhancements": {
@@ -81,8 +83,8 @@ def gpt4v_completion(image_path):
             {
                 "type": "AzureComputerVision",
                 "parameters": {
-                    "endpoint": "...",
-                    "key": "...."
+                    "endpoint": "YOUR_COMPUTER_VISION_ENDPOINT",
+                    "key": "YOUR_COMPUTER_VISION_KEY",
                 }
             }
         ],
